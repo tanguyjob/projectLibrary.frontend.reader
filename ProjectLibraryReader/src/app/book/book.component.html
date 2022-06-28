@@ -1,0 +1,28 @@
+<div class="m-5">
+
+    <h3>Catalogue</h3>
+    <div class="row line pb-4 mt-5">
+        <div class="col-6">
+            <h5>Titre</h5>
+        </div>
+        <div class="col-6">
+            <h5>Date</h5>
+        </div>
+    </div>
+
+
+    <div class="line mt-3" *ngFor="let book of books">
+        <!-- <a routerLink="/book-author/{{ ba.bookId }}"> -->
+            <div class="row">
+                <div class="col-6">                    
+                    {{ book.title }}
+                </div>
+                <div class="col-6">
+                    {{ book.publicationDate }}
+                </div>
+
+              
+            </div>
+        <!-- </a> -->
+    </div>
+</div>
