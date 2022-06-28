@@ -1,0 +1,18 @@
+a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .line {
+    border-bottom: 1px solid white;
+    padding-bottom: 15px;
+  }
+  
+  .row {
+    font-size: larger;
+  }
+  

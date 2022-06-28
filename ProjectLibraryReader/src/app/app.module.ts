@@ -8,13 +8,17 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { HomeComponent } from './home/home.component';
 import { BookComponent } from './book/book.component';
+import { AuthorComponent } from './author/author.component';
+import { ProfileDetailComponent } from './profile-detail/profile-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopBarComponent,
     HomeComponent,
-    BookComponent
+    BookComponent,
+    AuthorComponent,
+    ProfileDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +27,8 @@ import { BookComponent } from './book/book.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent},
       { path: 'home', component: HomeComponent},
-      { path: 'book', component: BookComponent}
+      { path: 'book', component: BookComponent},
+      { path: 'author', component: AuthorComponent}
     ])
   ],
   providers: [],

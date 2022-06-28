@@ -15,7 +15,7 @@ export class BookComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.subscr = this.dal.getAllBook().subscribe(     
+    this.subscr = this.dal.getAllBooks().subscribe(     
       (value)=>this.books=value
     );
   }
