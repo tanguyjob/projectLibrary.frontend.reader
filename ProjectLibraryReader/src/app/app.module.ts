@@ -10,6 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { BookComponent } from './book/book.component';
 import { AuthorComponent } from './author/author.component';
 import { ProfileDetailComponent } from './profile-detail/profile-detail.component';
+import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { ProfileDetailComponent } from './profile-detail/profile-detail.componen
     HomeComponent,
     BookComponent,
     AuthorComponent,
-    ProfileDetailComponent
+    ProfileDetailComponent,
+    ProfileComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,9 @@ import { ProfileDetailComponent } from './profile-detail/profile-detail.componen
       { path: '', component: HomeComponent},
       { path: 'home', component: HomeComponent},
       { path: 'book', component: BookComponent},
-      { path: 'author', component: AuthorComponent}
+      { path: 'author', component: AuthorComponent},
+      { path: 'profile', component: ProfileComponent},
+      { path: 'login', component: LoginComponent}
     ])
   ],
   providers: [],

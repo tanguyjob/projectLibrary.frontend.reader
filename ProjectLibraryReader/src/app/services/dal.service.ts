@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BookModel } from '../models/BookModel';
 import { AuthorModel } from '../models/AuthorModel';
+import { UserModel } from '../models/UserModel';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,7 @@ export class DalService {
 
   getProfile()
   {
-    return this.http.get<AuthorModel[]>("https://localhost:7143/api/User/1");
+    return this.http.get<UserModel[]>("https://localhost:7143/api/User/1");
   }
 
 }
