@@ -1,0 +1,44 @@
+<div class=m-5>
+    <h3>Panier</h3>
+    <div *ngIf="items.length > 0">
+        <div class="row line pb-4 mt-5">
+            <div class="col-4">
+                <h5>Titre</h5>
+            </div>
+            <div class="col-4">
+                <h5>Date</h5>
+            </div>
+           
+        </div>
+        <div class="line mt-3" *ngFor="let item of items">
+            <div class="row">
+                <div class="col-4">
+                    {{ item.title }}
+                </div>
+                <div class="col-4">
+                    {{ item.publicationDate }}
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group mt-5">
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="bibliotheque"
+                    (change)="radioChangeHandler($event)" checked>
+                <label class="form-check-label" for="inlineRadio1">Vous souhaitez venir les chercher à la bibliothèque</label>
+            </div>
+            
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="domicile"
+                    (change)="radioChangeHandler($event)">
+                <label class="form-check-label" for="inlineRadio2">Vous souhaitez les recevoir directement chez vous*</label>
+            </div>
+            
+            <p>*Uniquement valable pour les Bruxellois</p>
+            
+            <button class="btn btn-secondary mt-4" (click)="commander()">Commander</button>
+            <button class="btn btn-secondary mt-4 ml-2" (click)="delete()">Effacer</button>
+            </div>
+            </div>
+            </div>

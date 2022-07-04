@@ -11,7 +11,8 @@ import { Subscription } from 'rxjs';
 })
 export class ProfileComponent implements OnInit {
 subscr!: Subscription;
-user?: UserModel[]=[];;
+user?: UserModel;
+
   constructor(
     private authService: AuthentificationService,
     private router:Router
@@ -23,14 +24,8 @@ user?: UserModel[]=[];;
   }
 
   ngOnInit(): void {
-    if (this.user != null)
-    {
-      this.subscr = this.authService.getProfile().subscribe(
-        (u)=> {
-          this.user=u;
-        }
-      );
-    }
+    this.user=this.authService.getUser()
+    this.subscr=
   }
 
   OnDestroy() {

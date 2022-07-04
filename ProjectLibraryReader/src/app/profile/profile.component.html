@@ -1,1 +1,44 @@
-<p>profile works!</p>
+
+<div class="m-5">
+
+    <h3>Profile</h3>
+    <div *ngIf="user">
+         <div class="my-5 bod"> 
+         <div class="row">
+         <div class="col-5">
+              Nom: <br><br>
+              Prénom: <br><br>
+              Adresse courriel: <br><br>
+              Date de naissance: <br><br>
+              Téléphone: <br><br>
+              <!-- Adresse:<br><br><br><br>
+    
+              Abonnement:<br><br>
+              Type de profil: <br><br> -->
+         </div>
+         <div class="col-7">
+              {{ user.name }}<br><br>
+              {{ user.firstname }}<br><br>
+              {{ user.email }}<br><br>
+              {{ user.birthdate| date:'dd/MM/yyyy' }} <br><br>
+              {{ user.phone }}<br><br>
+              <!-- {{ user.street }}, {{ user.numberAddress }}<br><br>
+              {{ user.postCode }} {{ user.city }}<br><br>
+              {{ user.nameProfile }} <br><br>
+              {{ user.profileName }}    -->
+         </div>
+         
+       </div>
+       <hr>
+       <div class="row">
+     
+          <h4>Adresse</h4>
+       </div>
+       <div class="row">
+            <div class="col">
+              <button class="btn btn-danger" (click)="onLogout()">Logout</button>
+            </div>
+         </div>
+    </div> 
+    </div>
+    </div>

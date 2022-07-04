@@ -24,7 +24,7 @@ export class DalService {
 
   getProfile()
   {
-    return this.http.get<UserModel[]>("https://localhost:7143/api/User/1");
+    return this.http.get<UserModel>("https://localhost:7143/api/User/1");
   }
 
 }

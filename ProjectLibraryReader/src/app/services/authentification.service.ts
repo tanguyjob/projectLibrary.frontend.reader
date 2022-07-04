@@ -41,7 +41,12 @@ isAuth$!: BehaviorSubject<boolean>;
   }
   getProfile()
   {
-    //a modifier après
-    return this.http.get<UserModel[]>("https://localhost:7143/api/User/1");
+   console.log("je passe par mon console.log");
+    return this.http.get<UserModel>("https://localhost:7143/api/User/1");
+  }
+
+  getAllUser()
+  {
+    return this.http.get<UserModel[]>("https://localhost:7143/api/User");
   }
 }

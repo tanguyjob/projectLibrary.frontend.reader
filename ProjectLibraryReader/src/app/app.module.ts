@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
@@ -12,6 +11,11 @@ import { AuthorComponent } from './author/author.component';
 import { ProfileDetailComponent } from './profile-detail/profile-detail.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+import { AuthentificationService } from './services/authentification.service';
+import { AuthgardService } from './services/authgard.service';
+import { CartComponent } from './cart/cart.component';
+import { CartMenuComponent } from './cart-menu/cart-menu.component';
 
 
 @NgModule({
@@ -23,11 +27,15 @@ import { LoginComponent } from './login/login.component';
     AuthorComponent,
     ProfileDetailComponent,
     ProfileComponent,
-    LoginComponent
+    LoginComponent,
+    CartComponent,
+    CartMenuComponent,
+ 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+   FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent},
@@ -35,10 +43,12 @@ import { LoginComponent } from './login/login.component';
       { path: 'book', component: BookComponent},
       { path: 'author', component: AuthorComponent},
       { path: 'profile', component: ProfileComponent},
-      { path: 'login', component: LoginComponent}
+      // { path: 'profile',canActivate:[AuthgardService], component: ProfileComponent},
+      { path: 'login', component: LoginComponent},
+      { path: 'cart', canActivate:[AuthgardService], component: CartComponent}
     ])
   ],
-  providers: [],
+  providers: [AuthentificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
