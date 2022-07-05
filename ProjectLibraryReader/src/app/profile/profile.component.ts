@@ -4,6 +4,7 @@ import { UserModel } from '../models/UserModel';
 import { DalService } from '../services/dal.service';
 import { AuthentificationService } from '../services/authentification.service';
 import { Subscription } from 'rxjs';
+import { AddressModel } from '../models/AddressModel';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -12,10 +13,12 @@ import { Subscription } from 'rxjs';
 export class ProfileComponent implements OnInit {
 subscr!: Subscription;
 user?: UserModel;
+address!: AddressModel;
 
   constructor(
     private authService: AuthentificationService,
-    private router:Router
+    private router:Router,
+    private dal: DalService
   ) { }
 
   onLogout() {
@@ -24,12 +27,17 @@ user?: UserModel;
   }
 
   ngOnInit(): void {
-    this.user=this.authService.getUser()
-    this.subscr=
+    this.user=this.authService.getUser();
+    this.subscr = this.dal.getAddressById().subscribe(
+      (a)=>{
+        this.address=a;
+      }
+    );
   }
 
   OnDestroy() {
     this.subscr.unsubscribe();
+    
 }
 
 
