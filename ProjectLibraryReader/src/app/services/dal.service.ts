@@ -28,9 +28,9 @@ export class DalService {
     return this.http.get<UserModel>("https://localhost:7143/api/User/1");
   }
 
-  getAddressById()
+  getAddressById(id:number)
   {
-    return this.http.get<AddressModel>("https://localhost:7143/api/User/1"); 
+    return this.http.get<AddressModel>("https://localhost:7143/api/Address?Id="+id); 
   }
 
 }
