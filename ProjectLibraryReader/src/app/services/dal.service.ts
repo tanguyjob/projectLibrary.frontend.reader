@@ -30,7 +30,8 @@ export class DalService {
 
   getAddressById(id:number)
   {
-    return this.http.get<AddressModel>("https://localhost:7143/api/Address?Id="+id); 
+    console.log("getAddressById",id);
+    return this.http.get<AddressModel>("https://localhost:7143/api/Address/"+id); 
   }
 
 }

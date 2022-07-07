@@ -12,8 +12,10 @@ import { AddressModel } from '../models/AddressModel';
 })
 export class ProfileComponent implements OnInit {
 subscr!: Subscription;
+subscr2!: Subscription;
 user?: UserModel;
 address!: AddressModel;
+addressId!: number;
 
   constructor(
     private authService: AuthentificationService,
@@ -27,23 +29,27 @@ address!: AddressModel;
   }
 
   ngOnInit(): void {
+     
     this.user=this.authService.getUser();
+
+    console.log("ngOninit de profile ts",this.user!.fK_User_Address);
     if(this.user!= null)
     {
-      console.log("est ce que je passe dans mon if user == null");
-      console.log(+this.user.id);
       
-      this.subscr = this.authService.getProfile(1).subscribe(
+      this.subscr = this.authService.getProfile(this.user.id).subscribe(
         (u)=> {
           this.user=u;
+          
+          
         }
       );
+      console.log("avant l'appel de ma DAL",this.user!.fK_User_Address);
+    this.subscr = this.dal.getAddressById(this.user!.fK_User_Address).subscribe(
+      (a)=>{
+        this.address=a;
+      }
+    );
     }
-    // this.subscr = this.dal.getAddressById(+this.user!.fK_User_Address).subscribe(
-    //   (a)=>{
-    //     this.address=a;
-    //   }
-    // );
   }
 
   OnDestroy() {

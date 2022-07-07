@@ -38,7 +38,6 @@ export class LoginComponent implements OnInit {
         let us = this.userArray.find(x=>x.email == form.value.email && x.password == form.value.password );
         if (us != null)
         {
-          console.log("us.id");
           this.authSrv.signIn(us);
         }
        

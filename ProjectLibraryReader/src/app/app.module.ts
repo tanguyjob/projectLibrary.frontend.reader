@@ -42,8 +42,7 @@ import { CartMenuComponent } from './cart-menu/cart-menu.component';
       { path: 'home', component: HomeComponent},
       { path: 'book', component: BookComponent},
       { path: 'author', component: AuthorComponent},
-      { path: 'profile', component: ProfileComponent},
-      // { path: 'profile',canActivate:[AuthgardService], component: ProfileComponent},
+      { path: 'profile',canActivate:[AuthgardService], component: ProfileComponent},
       { path: 'login', component: LoginComponent},
       { path: 'cart', canActivate:[AuthgardService], component: CartComponent}
     ])

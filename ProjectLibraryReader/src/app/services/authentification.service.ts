@@ -29,8 +29,6 @@ isAuth$!: BehaviorSubject<boolean>;
     return this.myUser;
   }
   signIn(user:UserModel ) {
-    console.log("signin de mon service authentification");
-    console.log(user.firstname);
     this.isAuth=true;
     this.isAuth$.next(this.isAuth);
     this.myUser=user;
@@ -44,7 +42,7 @@ isAuth$!: BehaviorSubject<boolean>;
 
   getProfile(id:number)
   {
-    return this.http.get<UserModel>("https://localhost:7143/api/User?Id="+id);
+    return this.http.get<UserModel>("https://localhost:7143/api/User/"+id);
   }
 
   getAllUser()
