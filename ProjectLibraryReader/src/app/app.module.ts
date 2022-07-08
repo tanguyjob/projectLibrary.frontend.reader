@@ -16,6 +16,7 @@ import { AuthentificationService } from './services/authentification.service';
 import { AuthgardService } from './services/authgard.service';
 import { CartComponent } from './cart/cart.component';
 import { CartMenuComponent } from './cart-menu/cart-menu.component';
+import { BookDetailComponent } from './book-detail/book-detail.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { CartMenuComponent } from './cart-menu/cart-menu.component';
     LoginComponent,
     CartComponent,
     CartMenuComponent,
+    BookDetailComponent,
  
   ],
   imports: [
@@ -41,10 +43,11 @@ import { CartMenuComponent } from './cart-menu/cart-menu.component';
       { path: '', component: HomeComponent},
       { path: 'home', component: HomeComponent},
       { path: 'book', component: BookComponent},
+      { path: 'book-detail/:id', component: BookDetailComponent},
       { path: 'author', component: AuthorComponent},
       { path: 'profile',canActivate:[AuthgardService], component: ProfileComponent},
       { path: 'login', component: LoginComponent},
-      { path: 'cart', canActivate:[AuthgardService], component: CartComponent}
+      { path: 'cart', canActivate:[AuthgardService], component: CartComponent},
     ])
   ],
   providers: [AuthentificationService],

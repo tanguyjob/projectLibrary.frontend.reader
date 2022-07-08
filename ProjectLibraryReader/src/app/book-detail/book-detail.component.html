@@ -1,0 +1,60 @@
+<div class="p-4">
+    <div *ngFor="let b of books">
+        
+        <div class="row">          
+            <h1>{{ b.title }}</h1>
+        </div>   
+        <div class="row pt-5">
+            <h5 class="col-2">
+                <p>Auteur:</p>
+            </h5>
+            
+             <h5 class="col-2">
+                  {{ b.firstname }}
+             </h5>
+             <h5 class="col-2">
+                 {{ b.authorName }}
+             </h5>
+             <h5 class="col-2">
+                 {{ b.birthdate | date: "dd/MM/yyyy" }}
+             </h5>
+         </div>
+         <div class="row pt-5">
+         <div class="col-1">
+            Résumé:
+         </div>
+         <div class="col-9">
+            {{ b.resume }}
+         </div>
+         <div class="row pt-3">
+            <div class="col-1">
+                Date:
+            </div>
+            <div class="col-3">
+                {{ b.publicationDate | date: "dd/MM/yyyy" }}
+            </div>
+         </div>
+         <div class="row pt-3">
+            <div class="col-1">
+                Genre:
+            </div>
+            <div class="col-3">
+                {{ b.genreName }}
+            </div>
+         </div>
+         <div class="row pt-3">
+            <div class="col-1">
+                Langue:
+            </div>
+            <div class="col-3">
+                {{ b.languageName }}
+            </div>
+         </div>
+         <div class="row pt-5">
+            <div class="col-1">
+                <button type="button" class="btn btn-secondary" [disabled]="!isAuth" (click)="addToCart(null,b)">Ajouter</button> 
+           </div>
+        </div>
+    </div>
+   
+</div>

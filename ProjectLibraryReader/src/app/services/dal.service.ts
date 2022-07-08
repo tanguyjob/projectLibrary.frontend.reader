@@ -4,6 +4,7 @@ import { BookModel } from '../models/BookModel';
 import { AuthorModel } from '../models/AuthorModel';
 import { UserModel } from '../models/UserModel';
 import { AddressModel } from '../models/AddressModel';
+import { BookAuthorCustomModel } from '../models/BookAuthorCustomModel';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,11 @@ export class DalService {
   {
     console.log("getAddressById",id);
     return this.http.get<AddressModel>("https://localhost:7143/api/Address/"+id); 
+  }
+  
+  getBookAuthorCustom(id:number)
+  {
+    return this.http.get<BookAuthorCustomModel[]>("https://localhost:7143/api/BookAuthorCustom/"+id);
   }
 
 }
