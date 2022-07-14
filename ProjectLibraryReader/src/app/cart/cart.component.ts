@@ -28,13 +28,13 @@ radioChangeHandler(event: any) {
   }
 }
 
-commander() {
+order() {
   this.router.navigate(['ordered']);
 }
 
 delete() {
   this.cartService.deleteCart();
-  this.router.navigate(['catalog']);
+  this.router.navigate(['home']);
 }
 
 }

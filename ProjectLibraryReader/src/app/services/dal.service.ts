@@ -24,6 +24,11 @@ export class DalService {
     return this.http.get<AuthorModel[]>("https://localhost:7143/api/Author");
   }
 
+  getAuthor(id:number)
+  {
+    return this.http.get<AuthorModel>("https://localhost:7143/api/Author/"+id); 
+  }
+
   getProfile()
   {
     return this.http.get<UserModel>("https://localhost:7143/api/User/1");
@@ -31,7 +36,7 @@ export class DalService {
 
   getAddressById(id:number)
   {
-    console.log("getAddressById",id);
+
     return this.http.get<AddressModel>("https://localhost:7143/api/Address/"+id); 
   }
   

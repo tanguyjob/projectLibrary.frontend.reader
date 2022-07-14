@@ -25,6 +25,9 @@ isAuth!:boolean;
   ) { }
 
   addToCart(content: any, b: BookAuthorCustomModel){
+   
+   
+    
     if (this.cartSrv.addToCart(b))
     {
 

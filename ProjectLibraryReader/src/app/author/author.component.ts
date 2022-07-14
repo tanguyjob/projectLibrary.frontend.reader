@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthorModel } from '../models/AuthorModel';
 import { DalService } from '../services/dal.service';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-author',

@@ -15,7 +15,7 @@
 
 
     <div class="line mt-3" *ngFor="let author of authors">
-        <!-- <a routerLink="/book-author/{{ ba.bookId }}"> -->
+         <a routerLink="/author-detail/{{ author.id }}"> 
             <div class="row">
                 <div class="col-4">                    
                     {{ author.firstname }}
@@ -25,9 +25,8 @@
                 </div>
                 <div class="col-4">
                     {{ author.birthdate| date:'dd/MM/yyyy' }}
-                </div>
-              
+                </div>              
             </div>
-        <!-- </a> -->
+         </a> 
     </div>
 </div>

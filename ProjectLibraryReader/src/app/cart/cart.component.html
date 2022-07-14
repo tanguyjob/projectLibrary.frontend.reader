@@ -37,8 +37,15 @@
             
             <p>*Uniquement valable pour les Bruxellois</p>
             
-            <button class="btn btn-secondary mt-4" (click)="commander()">Commander</button>
+            <button class="btn btn-secondary mt-4" (click)="order()">Commander</button>
+            &nbsp;
             <button class="btn btn-secondary mt-4 ml-2" (click)="delete()">Effacer</button>
             </div>
-            </div>
-            </div>
+    </div>
+    <div class="pt-3" *ngIf="items.length == 0">
+            <h5>Le panier est actuellement vide</h5>
+    </div>
+
+
+
+</div>

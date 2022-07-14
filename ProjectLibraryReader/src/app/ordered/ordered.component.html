@@ -1,0 +1,10 @@
+<h2 class="m-5">Votre commande a bien été pris en compte</h2>
+
+<div class="mx-5">
+    <div *ngIf="this.package; else elseBlock">
+        <h5>Votre commande sera prête dans 7 jours.</h5>
+    </div>
+    <ng-template #elseBlock>
+        <h5>Votre commande vous sera envoyé.</h5>
+    </ng-template>
+</div>
