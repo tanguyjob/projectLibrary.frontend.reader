@@ -5,7 +5,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { BookAuthorCustomModel } from '../models/BookAuthorCustomModel';
 import { AuthentificationService } from '../services/authentification.service';
 import { CartService } from '../services/cart.service';
-
+// import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-book-detail',
   templateUrl: './book-detail.component.html',
@@ -30,7 +30,8 @@ isAuth!:boolean;
     
     if (this.cartSrv.addToCart(b))
     {
-
+      //modal
+     
     }
     this.router.navigate(['book']);
   }

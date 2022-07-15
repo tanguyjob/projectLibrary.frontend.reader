@@ -19,8 +19,7 @@ import { CartMenuComponent } from './cart-menu/cart-menu.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { OrderedComponent } from './ordered/ordered.component';
 import { AuthorDetailComponent } from './author-detail/author-detail.component';
-
-
+//import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,

@@ -45,4 +45,9 @@ export class DalService {
     return this.http.get<BookAuthorCustomModel[]>("https://localhost:7143/api/BookAuthorCustom/"+id);
   }
 
+
+  getBookByauthorId(id:number)
+  {
+    return this.http.get<BookModel[]>("https://localhost:7143/api/Book/GetBookByAuthorId/"+id);
+  }
 }

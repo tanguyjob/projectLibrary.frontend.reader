@@ -56,5 +56,12 @@
            </div>
         </div>
     </div>
+    <ng-template #modalData let-modal>
+
+        <div class="modal-body">
+            <p>Le livre a bien été ajouter au panier</p>
+            <button type="button" class="btn btn-secondary" (click)="modal.close('Save click')">OK</button>
+        </div>
+    </ng-template>
    
 </div>

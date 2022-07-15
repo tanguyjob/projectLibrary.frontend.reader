@@ -1,5 +1,4 @@
 <div class="m-5">
-    <h3>Auteur</h3>
     <div class="row line pb-3 mt-5">
         <div class="col-3">
             <h5>{{ author.name }}</h5>
@@ -11,4 +10,29 @@
             <h5>{{ author.birthdate | date: "dd/MM/yyyy" }}</h5>
         </div>
     </div>
+    <h3 class="py-5">Livres</h3>
+    <div class="row line pb-4 mt-5">
+        <div class="col-5">
+            <h5>Titre</h5>
+        </div>
+        <div class="col-5">
+            <h5>Date</h5>
+        </div>
+    </div>
+    <div *ngFor="let book of books">
+        <a routerLink="/book-detail/{{ book.id }}">
+        <div class="row line py-4">
+            
+        
+                <div class="col-5">
+                    {{ book.title }}
+                </div>
+                <div class="col-5">
+                    {{ book.publicationDate | date:'dd/MM/yyyy' }}
+                </div>
+            
+        </div>
+        </a>
+    </div>
+
 </div>
