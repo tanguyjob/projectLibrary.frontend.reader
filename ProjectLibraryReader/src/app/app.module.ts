@@ -19,7 +19,10 @@ import { CartMenuComponent } from './cart-menu/cart-menu.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { OrderedComponent } from './ordered/ordered.component';
 import { AuthorDetailComponent } from './author-detail/author-detail.component';
-//import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { TestModalComponent } from './test-modal/test-modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +38,7 @@ import { AuthorDetailComponent } from './author-detail/author-detail.component';
     BookDetailComponent,
     OrderedComponent,
     AuthorDetailComponent,
+    TestModalComponent,
  
   ],
   imports: [
@@ -53,7 +57,9 @@ import { AuthorDetailComponent } from './author-detail/author-detail.component';
       { path: 'cart', canActivate:[AuthgardService], component: CartComponent},
       { path: 'ordered', component: OrderedComponent},
       { path: 'author-detail/:id', component: AuthorDetailComponent},
-    ])
+      { path: 'modal', component: TestModalComponent}
+    ]),
+    NgbModule
   ],
   providers: [AuthentificationService],
   bootstrap: [AppComponent]
