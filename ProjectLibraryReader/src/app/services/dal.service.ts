@@ -5,7 +5,8 @@ import { AuthorModel } from '../models/AuthorModel';
 import { UserModel } from '../models/UserModel';
 import { AddressModel } from '../models/AddressModel';
 import { BookAuthorCustomModel } from '../models/BookAuthorCustomModel';
-
+import { BorrowingBookCustomModel } from '../models/BorrowingBookCustomModel';
+import { map } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -49,5 +50,11 @@ export class DalService {
   getBookByauthorId(id:number)
   {
     return this.http.get<BookModel[]>("https://localhost:7143/api/Book/GetBookByAuthorId/"+id);
+  }
+
+  getBorrowingBookByUserId(id:number)
+  {
+    return this.http.get<any[]>("https://localhost:7143/api/BorrowingBookCustom/"+id).pipe(map(data => data.map(d => new BorrowingBookCustomModel(d))));
+     //return this.http.get<any[]>("https://localhost:7143/api/BorrowingBookCustom/"+id);//.pipe(map(data => data.map(d => new BorrowingBookCustomModel())));
   }
 }

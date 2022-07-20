@@ -56,11 +56,20 @@
                          {{ address.box }}<br><br>
                     </div>
                </div>
-               <div class="row">
-                    <div class="col">
-                    <button class="btn btn-danger" (click)="onLogout()">Logout</button>
-               </div>
+          </div>  
+     </div>
+     <hr>
+     <h4>Mes emprunts</h4>
+     <div *ngFor="let b of borrowingBook">
+         {{ b.title }}  {{ b.plannedDate }} 
+     </div>
+     <div class="row">
+          <div class="col">
+              <button class="btn btn-danger" (click)="onLogout()">Logout</button>
           </div>
-     </div>   
+     </div>
+
+  
+   
      
 </div>
