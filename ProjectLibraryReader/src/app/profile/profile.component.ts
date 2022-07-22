@@ -55,7 +55,8 @@ export class ProfileComponent implements OnInit {
      this.subscr = this.dal.getBorrowingBookByUserId(this.user.id).subscribe(
       (b)=>
       {
-        this.setPlannedDate(b);
+        this.borrowingBook=b;
+        console.log(b);
       }
      );   
     }

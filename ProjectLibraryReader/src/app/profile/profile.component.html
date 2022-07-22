@@ -60,15 +60,34 @@
      </div>
      <hr>
      <h4>Mes emprunts</h4>
-     <div *ngFor="let b of borrowingBook">
-         {{ b.title }}  {{ b.plannedDate }} 
+
+     <div class="my-5 bod">
+          <div class="mb-3 row">
+               <div class="col-6">
+                    <h5>Titre du livre</h5>
+               </div>
+               <div class="col-6">
+                    <h5>Date de retour</h5>
+               </div>
+          </div>          
+               <div *ngFor="let b of borrowingBook">
+                    <div class="row">
+                         <div class="col-6">
+                              {{ b.title }}
+                         </div>
+                         <div class="col-6">
+                           {{ b.plannedDate | date:'dd/MM/yyyy'}}
+                         </div>
+                    </div> 
+               </div>
+              
+          
      </div>
      <div class="row">
           <div class="col">
-              <button class="btn btn-danger" (click)="onLogout()">Logout</button>
+               <button class="btn btn-danger" (click)="onLogout()">Logout</button>
           </div>
      </div>
-
   
    
      

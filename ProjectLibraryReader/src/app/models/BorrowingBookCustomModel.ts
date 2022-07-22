@@ -16,8 +16,8 @@ export class BorrowingBookCustomModel {
         this.borrowingId = obj && obj.borrowingId || "";
         // this.dateBegin = obj && parse(obj.dateBegin, "yyyy-mm-dd") || null;
         // this.dateBack = obj && parse(obj.dateBack, "yyyy-mm-dd") || null;
-         this.dateBegin = obj && parse(obj.dateBegin, "yyyy-mm-dd",new Date()) || null;
-         this.dateBack = obj && parse(obj.dateBack, "yyyy-mm-dd", new Date()) || null;
+         this.dateBegin = obj && new Date(obj.dateBegin) || null;
+         this.dateBack = obj && new Date(obj.dateBack) || null;
         this.addtional=obj && obj.additional || "";
         this.copyId=obj && obj.copyId || "";
         this.bookId=obj && obj.bookId || "";
