@@ -22,6 +22,7 @@ import { AuthorDetailComponent } from './author-detail/author-detail.component';
 import { TestModalComponent } from './test-modal/test-modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { format, formatDistance, formatRelative, subDays } from 'date-fns';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { format, formatDistance, formatRelative, subDays } from 'date-fns';
     OrderedComponent,
     AuthorDetailComponent,
     TestModalComponent,
+    NotFoundComponent,
  
   ],
   imports: [
@@ -57,7 +59,9 @@ import { format, formatDistance, formatRelative, subDays } from 'date-fns';
       { path: 'cart', canActivate:[AuthgardService], component: CartComponent},
       { path: 'ordered', component: OrderedComponent},
       { path: 'author-detail/:id', component: AuthorDetailComponent},
-      { path: 'modal', component: TestModalComponent}
+      { path: 'modal', component: TestModalComponent},
+      { path: 'notfound', component: NotFoundComponent},
+      { path:'**', redirectTo: 'notfound'}
     ]),
     NgbModule
   ],
